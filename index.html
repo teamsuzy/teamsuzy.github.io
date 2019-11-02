@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            background: #f8f9fc;
+        }
+
+        h4 {
+            font-weight: 200 !important;
+            padding-left: 10px;
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        @media only screen and (min-width: 796px) {
+            .text {
+                width: 50vw;
+                height: 100vh;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: calc(50vh - 15rem) 0 0 calc(25vw - 10rem);
+            }
+
+            .logo {
+                width: 50vw;
+                height: 100vh;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .logo img {
+                width: 30rem !important;
+                height: 30rem !important;
+                position: absolute;
+                right: calc(25vw - 15rem);
+                top: 15vh;
+            }
+        }
+
+        @media only screen and (max-width: 796px) {
+            .text {
+                width: 100vw !important;
+                height: 40vh !important;
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                padding: 5vh 0 0 0 !important;
+                text-align: center;
+            }
+
+            .logo {
+                width: 100vw !important;
+                height: 80vh !important;
+                position: relative !important;
+                left: 0 !important;
+                top: 0;
+                padding: 0;
+                margin: 0;
+            }
+
+            .logo img {
+                width: 100vw !important;
+                height: 100vw !important;
+                position: absolute;
+                left: 0;
+                top: calc(80vh - 100vw) !important;
+                padding: 0;
+                margin: 0;
+                /* position: absolute !important; */
+                /* margin-left: calc(25vw - 15rem) !important; */
+                /* bottom: 0vh !important; */
+            }
+        }
+    </style>
+</head>
+
+<body class="black-text grey lighten-5">
+
+    <div class="text">
+        <h1>Team S.U.Z.Y</h1>
+        <h4>Cansat competition 2020</h4>
+    </div>
+
+    <div class="logo">
+        <img src="img/logo.png">
+    </div>
+
+
+    <!-- <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red waves-effect" onclick="toggleTheme(false)">
+            <i class="large material-icons">lightbulb_outline</i>
+        </a>
+    </div> -->
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        // function toggleTheme(force, dark) {
+        //     if (!force) {
+        //         dark = !localStorage.getItem('dark')
+        //     }
+        //     // document.body.classList.replace(dark ? "grey" : "blue-grey", !dark ? "grey" : "blue-grey")
+        //     // document.body.classList.replace(dark ? "lighten-5" : "darken-4", !dark ? "lighten-5" : "darken-4")
+        //     // document.body.classList.replace(dark ? "black-text" : "white-text", !dark ? "black-text" :
+        //     //     "white-text")
+        //     if (dark) {
+        //         console.log("dark")
+        //         document.body.classList.replace("grey", "blue-grey")
+        //         document.body.classList.replace("lighten-5", "darken-4")
+        //         document.body.classList.replace("black-text", "white-text")
+        //         localStorage.setItem('dark', true)
+        //     } else {
+        //         console.log("light")
+        //         document.body.classList.replace("blue-grey", "grey")
+        //         document.body.classList.replace("darken-4", "lighten-4")
+        //         document.body.classList.replace("white-text", "black-text")
+        //         localStorage.setItem('dark', false)
+        //     }
+        // }
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     var elems = document.querySelectorAll('.fixed-action-btn');
+        //     var instances = M.FloatingActionButton.init(elems, {});
+        // });
+        // var dark = localStorage.getItem('dark')
+        // toggleTheme(true, dark)
+    </script>
+</body>
+
+</html>
