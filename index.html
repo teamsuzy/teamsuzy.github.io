@@ -21,6 +21,7 @@
             font-weight: 200 !important;
             padding-left: 10px;
             margin-top: 0;
+            margin-bottom: 30px;
         }
 
         h1 {
@@ -28,7 +29,11 @@
             padding-bottom: 0;
         }
 
-        @media only screen and (min-width: 796px) {
+        a {
+            padding-left: 10px;
+        }
+
+        @media only screen and (min-width: 575px) {
             .text {
                 width: 50vw;
                 height: 100vh;
@@ -55,7 +60,7 @@
             }
         }
 
-        @media only screen and (max-width: 796px) {
+        @media only screen and (max-width: 575px) {
             .text {
                 width: 100vw !important;
                 height: 40vh !important;
@@ -68,25 +73,30 @@
 
             .logo {
                 width: 100vw !important;
-                height: 80vh !important;
-                position: relative !important;
-                left: 0 !important;
-                top: 0;
+                height: 100vh !important;
+                position: fixed;
+                left: 10vw;
+                bottom: 10vh !important;
                 padding: 0;
                 margin: 0;
             }
 
             .logo img {
-                width: 100vw !important;
-                height: 100vw !important;
+                width: 80vw !important;
+                height: 80vw !important;
                 position: absolute;
-                left: 0;
-                top: calc(80vh - 100vw) !important;
+                bottom: 0px !important;
                 padding: 0;
                 margin: 0;
                 /* position: absolute !important; */
                 /* margin-left: calc(25vw - 15rem) !important; */
                 /* bottom: 0vh !important; */
+            }
+
+            a {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
             }
         }
     </style>
@@ -97,6 +107,7 @@
     <div class="text">
         <h1>Team S.U.Z.Y</h1>
         <h4>Cansat competition 2020</h4>
+        <a href="./dashboard">→ Go to dashboard</a>
     </div>
 
     <div class="logo">
