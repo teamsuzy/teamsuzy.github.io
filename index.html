@@ -13,8 +13,9 @@
         body {
             padding: 0;
             margin: 0;
-            position: relative;
+            /* position: relative; */
             background: #f8f9fc;
+            overflow-x: hidden;
         }
 
         h4 {
@@ -29,15 +30,25 @@
             padding-bottom: 0;
         }
 
-        a {
-            padding-left: 10px;
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 2.5rem;
+            z-index: 15;
+        }
+
+        .footer span:nth-child(2) {
+            position: absolute;
+            left: calc(75vw - 10rem - 100px);
+            top: 0;
         }
 
         @media only screen and (min-width: 575px) {
             .text {
                 width: 50vw;
                 height: 100vh;
-                position: absolute;
+                position: fixed;
                 left: 0;
                 top: 0;
                 padding: calc(50vh - 15rem) 0 0 calc(25vw - 10rem);
@@ -46,10 +57,10 @@
             .logo {
                 width: 50vw;
                 height: 100vh;
-                position: absolute;
-                right: 0;
+                position: fixed;
+                left: 0;
                 top: 0;
-                padding: calc(50vh - 21rem) 0 0 calc(25vw - 15rem);
+                padding: calc(50vh - 21rem) 0 0 calc(75vw - 15rem);
             }
 
             .logo img {
@@ -58,6 +69,34 @@
                 /* position: absolute; */
                 /* right: calc(25vw - 15rem); */
                 /* top: 15vh; */
+            }
+
+            .blog {
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                left: 0;
+                top: 80vh;
+                padding: 0 calc(25vw - 10rem) 0 calc(25vw - 10rem);
+                background: inherit;
+                z-index: 10;
+                border-top: solid 1px lightgrey;
+                padding-bottom: 2.5rem;
+            }
+
+            .logo-small {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                left: 90vw;
+                top: 80vh;
+                padding: 2rem 0 0 0;
+                z-index: 11;
+            }
+
+            .logo-small img {
+                width: 4rem;
+                height: 4rem;
             }
         }
 
@@ -75,9 +114,9 @@
             .logo {
                 width: 100vw !important;
                 height: 100vh !important;
-                position: fixed;
+                position: absolute;
                 left: 10vw;
-                bottom: 10vh !important;
+                top: 50vh !important;
                 padding: 0;
                 margin: 0;
             }
@@ -86,7 +125,7 @@
                 width: 80vw !important;
                 height: 80vw !important;
                 position: absolute;
-                bottom: 0px !important;
+                top: 0 !important;
                 padding: 0;
                 margin: 0;
                 /* position: absolute !important; */
@@ -95,63 +134,92 @@
             }
 
             a {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
+                position: absolute;
+                top: calc(100vh - 35px);
+                left: 18px;
+            }
+
+            .blog {
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                left: 0;
+                top: 100vh;
+                padding: 0 1.5rem 0 1.5rem;
+                background: inherit;
+                border-top: solid 1px lightgrey;
+                padding-bottom: 2.5rem;
+            }
+
+            .logo-small,
+            .footer {
+                display: none;
             }
         }
     </style>
 </head>
 
-<body class="black-text grey lighten-5">
-
+<body class="">
+    <div class="blog">
+        <h2>Blog</h2>
+        <div id="blog-content"></div>
+        <div class="footer">
+            <span class="left">Our <a href="https://github.com/teamsuzy">GitHub</a></span>
+            <span class="right">Site by <a href="https://netlob.dev">Netlob</a></span>
+        </div>
+    </div>
     <div class="text">
         <h1>Team S.U.Z.Y</h1>
         <h4>Cansat competition 2020</h4>
         <a href="./dashboard">→ Go to dashboard</a>
     </div>
-
     <div class="logo">
         <img src="img/logo.png">
     </div>
-
-
-    <!-- <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red waves-effect" onclick="toggleTheme(false)">
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green lighten-1 waves-effect" onclick="toggleTheme()">
             <i class="large material-icons">lightbulb_outline</i>
         </a>
-    </div> -->
-    <!--JavaScript at end of body for optimized loading-->
+    </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
-        // function toggleTheme(force, dark) {
-        //     if (!force) {
-        //         dark = !localStorage.getItem('dark')
-        //     }
-        //     // document.body.classList.replace(dark ? "grey" : "blue-grey", !dark ? "grey" : "blue-grey")
-        //     // document.body.classList.replace(dark ? "lighten-5" : "darken-4", !dark ? "lighten-5" : "darken-4")
-        //     // document.body.classList.replace(dark ? "black-text" : "white-text", !dark ? "black-text" :
-        //     //     "white-text")
-        //     if (dark) {
-        //         console.log("dark")
-        //         document.body.classList.replace("grey", "blue-grey")
-        //         document.body.classList.replace("lighten-5", "darken-4")
-        //         document.body.classList.replace("black-text", "white-text")
-        //         localStorage.setItem('dark', true)
-        //     } else {
-        //         console.log("light")
-        //         document.body.classList.replace("blue-grey", "grey")
-        //         document.body.classList.replace("darken-4", "lighten-4")
-        //         document.body.classList.replace("white-text", "black-text")
-        //         localStorage.setItem('dark', false)
-        //     }
-        // }
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     var elems = document.querySelectorAll('.fixed-action-btn');
-        //     var instances = M.FloatingActionButton.init(elems, {});
-        // });
-        // var dark = localStorage.getItem('dark')
-        // toggleTheme(true, dark)
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {});
+        });
+
+        const toggleTheme = () => {
+                localStorage.getItem('theme') == 'dark' ? light() : dark()
+            },
+            dark = () => {
+                localStorage.setItem('theme', "dark")
+                document.body.classList = ""
+                document.body.classList.add("blue-grey")
+                document.body.classList.add("darken-4")
+                document.body.classList.add("white-text")
+            },
+            light = () => {
+                localStorage.setItem('theme', "light")
+                document.body.classList = ""
+                document.body.style.backgroundColor = "#f8f9fc"
+                // document.querySelector(".blog").style.backgroundColor = "#f8f9fc"
+                document.body.classList.add("black-text")
+            }
+        localStorage.getItem('dark') == 'dark' ? dark() : light()
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = this.responseText
+                response = response.replace(response.substring(response.indexOf("<meta"), response.indexOf(
+                    "</style>")), "")
+                document.querySelector("#blog-content").innerHTML = response
+            }
+        };
+        xhttp.open("GET",
+            "https://docs.google.com/document/d/e/2PACX-1vRTveuBnEh1S4mubucU77pzqXWBNsgpHJGUcqXjymr0WXHutUsTP14kgcQruQOGiVBsFt8krgOC2fi7/pub?embedded=true",
+            true);
+        xhttp.send();
     </script>
 </body>
 
